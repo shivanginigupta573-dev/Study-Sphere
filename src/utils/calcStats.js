@@ -30,10 +30,11 @@ export function subjectDistribution(tasksLog = []) {
 }
 
 export function heatmapValues(tasksLog = []) {
-  // returns [{ date:'yyyy-MM-dd', count: minutes/30 }]
+  // returns [{ date:'yyyy-MM-dd', count }]
+  // count: 0 = no activity, 1 = light, 2 = medium, 3 = good, 4+ = intense
   const days = getLastNDays(90);
   return days.map((d) => {
     const minutes = tasksLog.filter((t) => t.date === d).reduce((s, x) => s + (x.minutes || 0), 0);
-    return { date: d, count: Math.floor(minutes / 30) }; // intensity buckets
+    return { date: d, count: minutes > 0 ? Math.ceil(minutes / 15) : 0 };
   });
 }

@@ -26,8 +26,10 @@ export default function Planner() {
   }
 
   return (
-    <div>
-      <h1 className="text-2xl font-semibold mb-4">Study Planner</h1>
+    <div className="animate-in fade-in zoom-in duration-500">
+      <h1 className="text-4xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 drop-shadow-sm">
+        Study Planner
+      </h1>
       <ScheduleForm addTask={addTask} />
       <TaskList tasks={tasks} removeTask={removeTask} markDone={markDone} />
     </div>

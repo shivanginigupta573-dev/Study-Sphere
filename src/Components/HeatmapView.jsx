@@ -1,60 +1,57 @@
 import ReactCalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
+import { subDays } from "date-fns";
 
 export default function HeatmapView({ values }) {
-  return (
-    <div className="p-5 rounded-2xl bg-[#0b1220] border border-slate-700 shadow-2xl">
-      <h3 className="font-semibold mb-5 text-lg text-slate-100">
-        Performance Heatmap
-      </h3>
+  const endDate = new Date();
+  const startDate = subDays(endDate, 90);
 
+  return (
+    <div className="w-full">
       <ReactCalendarHeatmap
-        startDate={new Date("2024-10-01")}
-        endDate={new Date("2024-12-31")}
+        startDate={startDate}
+        endDate={endDate}
         values={values}
         showWeekdayLabels={false}
         classForValue={(value) => {
           if (!value || value.count === 0) return "heat-0";
-          if (value.count <= 2) return "heat-1";
-          if (value.count <= 4) return "heat-2";
-          return "heat-3";
+          if (value.count <= 1) return "heat-1";
+          if (value.count <= 2) return "heat-2";
+          if (value.count <= 3) return "heat-3";
+          return "heat-4";
         }}
       />
 
       <style>{`
         .react-calendar-heatmap text {
-          fill: #94a3b8;
+          fill: #6b7280;
           font-size: 10px;
         }
 
-        .heat-0 rect {
-          fill: #020617;
-        }
-
-        .heat-1 rect {
-          fill: #22c55e;
-          opacity: 0.4;
-        }
-
-        .heat-2 rect {
-          fill: #22c55e;
-          opacity: 0.7;
-        }
-
-        .heat-3 rect {
-          fill: #22c55e;
-          opacity: 1;
-        }
-
         .react-calendar-heatmap rect {
-          rx: 4px;
-          ry: 4px;
-          transition: all 0.2s ease;
+          rx: 3px;
+          ry: 3px;
         }
+
+        /* Light Mode – GitHub/LeetCode green scale */
+        rect.heat-0 { fill: #ebedf0 !important; }
+        rect.heat-1 { fill: #9be9a8 !important; }
+        rect.heat-2 { fill: #40c463 !important; }
+        rect.heat-3 { fill: #30a14e !important; }
+        rect.heat-4 { fill: #216e39 !important; }
+
+        /* Dark Mode – GitHub dark green scale */
+        html.dark .react-calendar-heatmap text { fill: #9ca3af; }
+        html.dark rect.heat-0 { fill: #161b22 !important; }
+        html.dark rect.heat-1 { fill: #0e4429 !important; }
+        html.dark rect.heat-2 { fill: #006d32 !important; }
+        html.dark rect.heat-3 { fill: #26a641 !important; }
+        html.dark rect.heat-4 { fill: #39d353 !important; }
 
         .react-calendar-heatmap rect:hover {
-          stroke: #ffffff;
-          stroke-width: 1.2px;
+          stroke: #818cf8;
+          stroke-width: 1px;
+          transition: all 0.2s ease-in-out;
         }
       `}</style>
     </div>
