@@ -37,17 +37,37 @@ export default function TimerWidget({ onComplete, defaultMinutes = 25, defaultSu
   }
 
   return (
-    <div className="p-4 rounded-lg bg-white/40 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700">
-      <div className="text-3xl font-mono text-center">{format(seconds)}</div>
-      <div className="flex gap-2 mt-3">
-        <select value={subject} onChange={(e)=>setSubject(e.target.value)} className="flex-1 p-2 rounded border">
+    <div className="flex flex-col items-center p-8 md:p-12 glass rounded-3xl mt-6 relative overflow-hidden group transition-all duration-500">
+      
+      {/* Background glowing effect when running */}
+      {running && <div className="absolute inset-0 bg-indigo-500/5 dark:bg-indigo-500/10 animate-pulse rounded-3xl blur-3xl -z-10"></div>}
+
+      <div className="mb-6 w-full flex justify-center">
+         <select value={subject} onChange={(e)=>setSubject(e.target.value)} className="text-lg lg:text-xl font-bold bg-transparent text-center focus:outline-none border-b-2 border-dashed border-gray-300 dark:border-gray-600 pb-1 text-indigo-700 dark:text-indigo-400 cursor-pointer">
           <option>General</option>
           <option>DSA</option>
           <option>Math</option>
           <option>ML</option>
         </select>
-        <button onClick={()=>setRunning(!running)} className="px-3 py-2 bg-indigo-600 text-white rounded">{running? 'Pause' : 'Start'}</button>
-        <button onClick={()=>{ setRunning(false); setSeconds(defaultMinutes*60); }} className="px-3 py-2 bg-gray-400 rounded">Reset</button>
+      </div>
+
+      <div className={`text-[6rem] md:text-[9rem] font-bold tracking-tighter tabular-nums leading-none mb-8 transition-colors duration-500 ${running ? "text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 drop-shadow-2xl scale-105" : "text-gray-800 dark:text-white"}`}>
+        {format(seconds)}
+      </div>
+
+      <div className="flex gap-4">
+        <button 
+          onClick={()=>setRunning(!running)} 
+          className={`w-36 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 ${running ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' : 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-indigo-500/40'}`}
+        >
+          {running ? '⏸ Pause' : '▶ Start'}
+        </button>
+        <button 
+          onClick={()=>{ setRunning(false); setSeconds(defaultMinutes*60); }} 
+          className="w-36 py-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold rounded-2xl text-lg transition-all duration-300"
+        >
+          ↺ Reset
+        </button>
       </div>
     </div>
   );

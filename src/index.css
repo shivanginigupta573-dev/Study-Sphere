@@ -1,4 +1,18 @@
 @import "tailwindcss";
 @custom-variant dark (&:is(.dark *));
 
-body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+@theme {
+  --font-sans: 'Inter', sans-serif;
+}
+
+body { 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  font-family: var(--font-sans);
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/50 dark:bg-gray-900/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 shadow-xl;
+  }
+}
