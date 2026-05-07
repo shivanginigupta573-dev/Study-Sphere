@@ -1,16 +1,111 @@
-# React + Vite
+# StudySphere
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+StudySphere is a modern student productivity and learning platform designed to help students stay organized, consistent, and focused throughout their academic journey.
 
-Currently, two official plugins are available:
+The platform combines productivity tracking, study management, and visual analytics to create a smoother and more motivating learning experience for students.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📚 Study planning and organization
+- 📈 Productivity tracking
+- 🔥 Learning consistency heatmap
+- 🎯 Clean and modern UI
+- 📱 Responsive design
+- ⚡ Fast performance using Vite + React
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Future Goals
+
+- User authentication
+- AI-powered study assistance
+- Smart reminders and streak tracking
+- Notes and resource management
+- Personalized dashboards
+- Collaboration and group study features
+
+---
+
+## 🛠️ Tech Stack
+
+- React
+- Vite
+- JavaScript
+- HTML/CSS
+- ESLint
+
+---
+
+## 📂 Project Structure
+
+```bash
+Study-Sphere/
+├── public/
+├── src/
+├── README.md
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### Clone the repository
+
+```bash
+git clone https://github.com/shivanginigupta573-dev/Study-Sphere.git
+```
+
+### Navigate to the project folder
+
+```bash
+cd Study-Sphere
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to contribute:
+
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
+
+Beginner-friendly issues will be labeled with:
+
+- `good first issue`
+- `enhancement`
+- `frontend`
+
+---
+
+## 🌟 Vision
+
+StudySphere aims to become a collaborative platform where students can not only manage productivity but also build better study habits and learn more effectively together.
+
+---
+
+## 👩‍💻 Author
+
+**Shivangini Gupta**
+
+GitHub: https://github.com/shivanginigupta573-dev
