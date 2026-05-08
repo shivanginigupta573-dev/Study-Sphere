@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Planner from "./pages/Planner";
 import Dashboard from "./pages/Dashboard";
 import Timer from "./pages/Timer";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./Components/Sidebar";
 
 function App() {
   return (
