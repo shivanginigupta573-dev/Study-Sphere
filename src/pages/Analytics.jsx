@@ -1,5 +1,5 @@
 import { useState } from "react";
-import HeatmapView from "./components/HeatmapView";
+import HeatmapView from "./Components/HeatmapView";
 
 export default function Analytics() {
   const [heatmapValues, setHeatmapValues] = useState([

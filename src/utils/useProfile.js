@@ -1,4 +1,4 @@
-import useLocalStorage from "./useLocalStorage";
+import useLocalStorage from "./useLocalStorage.js";
 
 export default function useProfile() {
   const [profile, setProfile] = useLocalStorage("profile", {
