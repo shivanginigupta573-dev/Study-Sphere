@@ -103,6 +103,7 @@ Beginner-friendly issues will be labeled with:
 StudySphere aims to become a collaborative platform where students can not only manage productivity but also build better study habits and learn more effectively together.
 
 ---
+**[🔗 View Live Demo](https://study-sphere-sooty.vercel.app/)**
 
 ## 👩‍💻 Author
 
