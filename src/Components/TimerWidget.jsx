@@ -33,7 +33,7 @@ export default function TimerWidget({
     if (seconds <= 0 && running) {
       setRunning(false);
 
-      const audio = new Audio("public/sounds/complete.mp3");
+      const audio = new Audio("/sounds/complete.mp3");
       audio.play();
 
       onComplete(minutes, subject);
