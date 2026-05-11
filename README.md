@@ -38,6 +38,61 @@ The platform combines productivity tracking, study management, and visual analyt
 
 ---
 
+## ✅ Prerequisites
+
+Before running this project, make sure you have:
+
+- Node.js (v18 or above) installed → https://nodejs.org
+- npm (comes with Node)
+
+Check versions:
+
+```bash
+node -v
+npm -v
+
+
+---
+
+### 🔧 Improve Installation Section (replace the old one)
+
+Find the current **Installation & Setup** and replace it with:
+
+```md
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to run the project locally:
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/shivanginigupta573-dev/Study-Sphere.git
+
+
+---
+
+### 🔧 Improve Contributing Section (replace existing)
+
+Replace the Contributing section with:
+
+```md
+---
+
+## 🤝 Contributing
+
+We welcome contributions from beginners and experienced developers.
+
+### Steps to contribute:
+
+1. Fork this repository
+2. Clone your forked repo
+3. Create a new branch
+
+```bash
+git checkout -b feature/your-feature-name
+
 ## 📂 Project Structure
 
 ```bash
