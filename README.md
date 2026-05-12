@@ -6,18 +6,18 @@ The platform combines productivity tracking, study management, and visual analyt
 
 ---
 
-## ✨ Features
+## Features
 
-- 📚 Study planning and organization
-- 📈 Productivity tracking
-- 🔥 Learning consistency heatmap
-- 🎯 Clean and modern UI
-- 📱 Responsive design
-- ⚡ Fast performance using Vite + React
+- Study planning and organization
+- Productivity tracking
+- Learning consistency heatmap
+- Clean and modern UI
+- Responsive design
+- Fast performance using Vite + React
 
 ---
 
-## 🚀 Future Goals
+## Future Goals
 
 - User authentication
 - AI-powered study assistance
@@ -28,7 +28,7 @@ The platform combines productivity tracking, study management, and visual analyt
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - React
 - Vite
@@ -38,62 +38,7 @@ The platform combines productivity tracking, study management, and visual analyt
 
 ---
 
-## ✅ Prerequisites
-
-Before running this project, make sure you have:
-
-- Node.js (v18 or above) installed → https://nodejs.org
-- npm (comes with Node)
-
-Check versions:
-
-```bash
-node -v
-npm -v
-
-
----
-
-### 🔧 Improve Installation Section (replace the old one)
-
-Find the current **Installation & Setup** and replace it with:
-
-```md
----
-
-## ⚙️ Installation & Setup
-
-Follow these steps to run the project locally:
-
-### 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/shivanginigupta573-dev/Study-Sphere.git
-
-
----
-
-### 🔧 Improve Contributing Section (replace existing)
-
-Replace the Contributing section with:
-
-```md
----
-
-## 🤝 Contributing
-
-We welcome contributions from beginners and experienced developers.
-
-### Steps to contribute:
-
-1. Fork this repository
-2. Clone your forked repo
-3. Create a new branch
-
-```bash
-git checkout -b feature/your-feature-name
-
-## 📂 Project Structure
+##  Project Structure
 
 ```bash
 Study-Sphere/
@@ -106,7 +51,7 @@ Study-Sphere/
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 ### Clone the repository
 
@@ -134,7 +79,7 @@ npm run dev
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome!
 
@@ -153,14 +98,14 @@ Beginner-friendly issues will be labeled with:
 
 ---
 
-## 🌟 Vision
+##  Vision
 
 StudySphere aims to become a collaborative platform where students can not only manage productivity but also build better study habits and learn more effectively together.
 
 ---
 **[🔗 View Live Demo](https://study-sphere-sooty.vercel.app/)**
 
-## 👩‍💻 Author
+##  Author
 
 **Shivangini Gupta**
 
