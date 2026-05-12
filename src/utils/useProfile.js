@@ -2,8 +2,8 @@ import useLocalStorage from "./useLocalStorage.js";
 
 export default function useProfile() {
   const [profile, setProfile] = useLocalStorage("profile", {
-    name: "UserName",
-    college: "XYZ",
+    name: "Shivangini",
+    college: "NIT Durgapur",
     avatar: null,
   });
 
