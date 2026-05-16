@@ -4,6 +4,7 @@ import Planner from "./pages/Planner";
 import Dashboard from "./pages/Dashboard";
 import Timer from "./pages/Timer";
 import Sidebar from "./Components/Sidebar";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
             </Routes>
           </div>
         </main>
+     
       </div>
+      <Footer/>
     </div>
   );
 }
