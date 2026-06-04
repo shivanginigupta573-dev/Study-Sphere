@@ -18,10 +18,12 @@ export default function Timer() {
   }
 
   return (
-    <div className="animate-in fade-in zoom-in duration-500">
-      <h1 className="text-4xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 drop-shadow-sm">
-        Focus Timer
-      </h1>
+    <div className="animate-in fade-in duration-500 max-w-5xl mx-auto pb-10">
+      <header className="mb-6">
+        <h1 className="text-3xl font-bold text-indigo-400 tracking-tight">
+          Focus Timer
+        </h1>
+      </header>
 
       <TimerWidget onComplete={onComplete} />
     </div>

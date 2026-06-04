@@ -34,7 +34,7 @@ export default function TimerWidget({
       setRunning(false);
 
       const audio = new Audio("/sounds/complete.mp3");
-      audio.play();
+      audio.play().catch(() => {});
 
       onComplete(minutes, subject);
 
@@ -50,28 +50,30 @@ export default function TimerWidget({
   }
 
   return (
-    <div className="flex flex-col items-center p-8 md:p-12 glass rounded-3xl mt-6 relative overflow-hidden group transition-all duration-500">
+    <div className="flex flex-col items-center p-12 lg:p-24 bg-[#F8F9FA] dark:bg-[#131A2A] rounded-3xl mt-2 relative border border-gray-100 dark:border-white/5 shadow-2xl transition-all duration-500">
       
       {/* Background glowing effect when running */}
       {running && (
-        <div className="absolute inset-0 bg-indigo-500/5 dark:bg-indigo-500/10 animate-pulse rounded-3xl blur-3xl -z-10"></div>
+        <div className="absolute inset-0 bg-violet-500/10 dark:bg-violet-500/20 animate-pulse rounded-3xl blur-3xl -z-10 transition-all duration-1000"></div>
       )}
 
-      <div className="mb-6 w-full flex justify-center">
+      {/* Subject Selector */}
+      <div className="mb-8 w-full flex justify-center group relative">
         <select
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
-          className="text-lg lg:text-xl font-bold bg-transparent text-center focus:outline-none border-b-2 border-dashed border-gray-300 dark:border-gray-600 pb-1 text-indigo-700 dark:text-indigo-400 cursor-pointer"
+          className="appearance-none text-xl font-bold bg-transparent text-center focus:outline-none border-b border-dashed border-gray-300 dark:border-gray-700 pb-2 text-violet-600 dark:text-indigo-400 cursor-pointer pr-6 tracking-wide"
         >
           <option>General</option>
           <option>DSA</option>
           <option>Math</option>
           <option>ML</option>
         </select>
+        <svg className="w-4 h-4 text-violet-600 dark:text-indigo-400 absolute right-[calc(50%-2.5rem)] top-1.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" /></svg>
       </div>
 
       {/* Session Presets */}
-      <div className="flex gap-3 mb-8 flex-wrap justify-center">
+      <div className="flex gap-4 mb-12 flex-wrap justify-center">
         {[25, 50, 90].map((preset) => (
           <button
             key={preset}
@@ -80,33 +82,37 @@ export default function TimerWidget({
               setMinutes(preset);
               setSeconds(preset * 60);
             }}
-            className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-all duration-300 text-sm font-semibold"
+            className={`px-6 py-2.5 rounded-full transition-all duration-300 text-sm font-bold tracking-wide shadow-sm ${
+              minutes === preset
+                ? "bg-gray-800 text-white dark:bg-gray-700 dark:text-white ring-2 ring-gray-400 dark:ring-gray-600 ring-offset-2 dark:ring-offset-[#131A2A]"
+                : "bg-gray-200/80 dark:bg-[#1E293B] text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-[#334155]"
+            }`}
           >
             {preset} min
           </button>
         ))}
       </div>
 
-      <div
-        className={`text-[6rem] md:text-[9rem] font-bold tracking-tighter tabular-nums leading-none mb-8 transition-colors duration-500 ${
-          running
-            ? "text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 drop-shadow-2xl scale-105"
-            : "text-gray-800 dark:text-white"
-        }`}
-      >
+      {/* Timer Text */}
+      <div className="text-[8rem] md:text-[12rem] font-extrabold tracking-tighter tabular-nums leading-none mb-14 text-gray-900 dark:text-white transition-transform duration-500 drop-shadow-sm">
         {format(seconds)}
       </div>
 
-      <div className="flex gap-4">
+      {/* Action Buttons */}
+      <div className="flex gap-5">
         <button
           onClick={() => setRunning(!running)}
-          className={`w-36 py-4 rounded-2xl font-bold text-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 ${
+          className={`w-40 py-4 rounded-2xl font-bold text-lg shadow-xl transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-0.5 ${
             running
-              ? "bg-amber-100 text-amber-700 hover:bg-amber-200"
-              : "bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:shadow-indigo-500/40"
+              ? "bg-amber-100 text-amber-800 hover:bg-amber-200"
+              : "bg-gradient-to-r from-[#8B5CF6] to-[#A855F7] text-white hover:opacity-95 hover:shadow-purple-500/30"
           }`}
         >
-          {running ? "⏸ Pause" : "▶ Start"}
+          {running ? (
+            <>⏸ Pause</>
+          ) : (
+            <>▶ Start</>
+          )}
         </button>
 
         <button
@@ -114,7 +120,7 @@ export default function TimerWidget({
             setRunning(false);
             setSeconds(minutes * 60);
           }}
-          className="w-36 py-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold rounded-2xl text-lg transition-all duration-300"
+          className="w-40 py-4 bg-gray-200 dark:bg-[#1E293B] hover:bg-gray-300 dark:hover:bg-[#334155] text-gray-800 dark:text-gray-200 font-bold rounded-2xl text-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-sm transform hover:-translate-y-0.5"
         >
           ↺ Reset
         </button>
