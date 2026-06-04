@@ -6,18 +6,18 @@ The platform combines productivity tracking, study management, and visual analyt
 
 ---
 
-## ✨ Features
+## Features
 
-- 📚 Study planning and organization
-- 📈 Productivity tracking
-- 🔥 Learning consistency heatmap
-- 🎯 Clean and modern UI
-- 📱 Responsive design
-- ⚡ Fast performance using Vite + React
+- Study planning and organization
+- Productivity tracking
+- Learning consistency heatmap
+- Clean and modern UI
+- Responsive design
+- Fast performance using Vite + React
 
 ---
 
-## 🚀 Future Goals
+## Future Goals
 
 - User authentication
 - AI-powered study assistance
@@ -28,7 +28,7 @@ The platform combines productivity tracking, study management, and visual analyt
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - React
 - Vite
@@ -38,7 +38,7 @@ The platform combines productivity tracking, study management, and visual analyt
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```bash
 Study-Sphere/
@@ -51,7 +51,7 @@ Study-Sphere/
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 ### Clone the repository
 
@@ -79,7 +79,7 @@ npm run dev
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome!
 
@@ -98,14 +98,14 @@ Beginner-friendly issues will be labeled with:
 
 ---
 
-## 🌟 Vision
+##  Vision
 
 StudySphere aims to become a collaborative platform where students can not only manage productivity but also build better study habits and learn more effectively together.
 
 ---
 **[🔗 View Live Demo](https://study-sphere-sooty.vercel.app/)**
 
-## 👩‍💻 Author
+##  Author
 
 **Shivangini Gupta**
 
