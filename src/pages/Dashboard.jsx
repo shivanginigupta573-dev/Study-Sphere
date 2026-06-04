@@ -16,31 +16,35 @@ export default function Dashboard() {
 
   const totalMinutes = logs.reduce((s, x) => s + (x.minutes || 0), 0);
   return (
-    <div className="animate-in fade-in zoom-in duration-500">
-      <h1 className="text-4xl font-extrabold mb-8 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 drop-shadow-sm">
-        Analytics Overview
-      </h1>
+    <div className="animate-in fade-in duration-500 max-w-5xl mx-auto pb-10">
+      <header className="mb-6">
+        <h1 className="text-3xl font-bold text-teal-600 dark:text-teal-400 tracking-tight">
+          Analytics Overview
+        </h1>
+      </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 glass p-6 rounded-3xl">
-          <h3 className="text-lg font-bold mb-4 text-gray-700 dark:text-gray-300">Activity Heatmap</h3>
+        <div className="md:col-span-2 bg-white dark:bg-[#111827] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-500">
+          <h3 className="font-bold text-gray-800 dark:text-gray-200 mb-6">Activity Heatmap</h3>
           <HeatmapView values={heat} />
         </div>
 
-        <div className="glass p-6 rounded-3xl flex flex-col justify-center items-center">
-          <h3 className="text-lg font-bold mb-4 text-gray-700 dark:text-gray-300 self-start">Subject Distribution</h3>
-          <div className="w-full max-w-[200px]"><DonutChart data={dist} /></div>
+        <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:-translate-y-1 flex flex-col justify-center items-center transition-all duration-500">
+          <h3 className="font-bold text-gray-800 dark:text-gray-200 mb-6 self-start w-full">Subject Distribution</h3>
+          <div className="w-full max-w-[200px] flex-1 flex items-center justify-center">
+            <DonutChart data={dist} />
+          </div>
         </div>
       </div>
 
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="glass p-6 rounded-3xl">
-          <h3 className="text-lg font-bold mb-4 text-gray-700 dark:text-gray-300">Weekly Hours</h3>
+        <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-500">
+          <h3 className="font-bold text-gray-800 dark:text-gray-200 mb-6">Weekly Hours</h3>
           <LineChart data={weekly} />
         </div>
         
-        <div className="glass p-6 rounded-3xl flex flex-col justify-center">
-          <h3 className="text-lg font-bold mb-6 text-gray-700 dark:text-gray-300">Goal Progress</h3>
+        <div className="bg-white dark:bg-[#111827] p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:-translate-y-1 flex flex-col justify-center transition-all duration-500">
+          <h3 className="font-bold text-gray-800 dark:text-gray-200 mb-6">Goal Progress</h3>
           <ProgressBar title="Total Time Logged" value={totalMinutes} max={60*10} />
         </div>
       </div>
