@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
 import useProfile from "../utils/useProfile";
 
-export default function Sidebar() {
+export default function Sidebar({ onNavigate, modalId = "profileModal" }) {
   const { theme, setTheme } = useTheme();
   const { profile, setProfile } = useProfile();
   const { name, college, avatar } = profile;
@@ -35,6 +35,7 @@ export default function Sidebar() {
           <NavLink
             key={item.path}
             to={item.path}
+            onClick={onNavigate}
             className={({ isActive }) =>
               `px-4 py-2.5 rounded-xl font-semibold transition-all duration-300 flex items-center gap-3 text-sm ${
                 isActive
@@ -63,7 +64,7 @@ export default function Sidebar() {
       <div className="mt-8 space-y-4">
         {/* Profile Card */}
         <div 
-          onClick={() => document.getElementById("profileModal").showModal()}
+          onClick={() => document.getElementById(modalId).showModal()}
           className="flex items-center justify-between p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
         >
           <div className="flex items-center gap-3">
@@ -100,7 +101,7 @@ export default function Sidebar() {
       </div>
 
       {/* PROFILE EDIT MODAL */}
-      <dialog id="profileModal" className="rounded-3xl p-8 backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 border border-gray-200 dark:border-gray-800 shadow-2xl text-gray-900 dark:text-gray-100 max-w-sm w-full m-auto backdrop:bg-gray-900/40">
+      <dialog id={modalId} className="rounded-3xl p-8 backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 border border-gray-200 dark:border-gray-800 shadow-2xl text-gray-900 dark:text-gray-100 max-w-sm w-full m-auto backdrop:bg-gray-900/40">
         <form method="dialog" className="space-y-5">
           <h3 className="text-xl font-bold text-center">Edit Profile</h3>
           <div className="space-y-1">
