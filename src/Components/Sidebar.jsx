@@ -101,7 +101,7 @@ export default function Sidebar({ onNavigate, modalId = "profileModal" }) {
       </div>
 
       {/* PROFILE EDIT MODAL */}
-      <dialog id={modalId} className="rounded-3xl p-8 backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 border border-gray-200 dark:border-gray-800 shadow-2xl text-gray-900 dark:text-gray-100 max-w-sm w-full m-auto backdrop:bg-gray-900/40">
+      <dialog id={modalId} className="rounded-3xl p-8 backdrop-blur-xl bg-white/95 dark:bg-[#111827]/95 border border-gray-200 dark:border-gray-800 shadow-2xl text-gray-900 dark:text-gray-100 max-w-sm w-full m-auto backdrop:bg-gray-900/40">
         <form method="dialog" className="space-y-5">
           <h3 className="text-xl font-bold text-center">Edit Profile</h3>
           <div className="space-y-1">

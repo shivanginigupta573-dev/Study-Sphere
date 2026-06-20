@@ -66,7 +66,7 @@ function App() {
           aria-controls="mobile-sidebar"
           aria-expanded={isSidebarOpen}
           onClick={() => setIsSidebarOpen((open) => !open)}
-          className="md:hidden fixed top-4 left-4 z-50 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white/95 text-gray-700 shadow-lg backdrop-blur transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:border-gray-800 dark:bg-gray-900/95 dark:text-gray-100 dark:hover:bg-gray-800"
+          className="md:hidden fixed top-4 left-4 z-50 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white/95 text-gray-700 shadow-lg backdrop-blur transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:border-gray-800 dark:bg-[#111827]/95 dark:text-gray-100 dark:hover:bg-gray-800"
         >
           <span className="sr-only">
             {isSidebarOpen ? "Close navigation menu" : "Open navigation menu"}

@@ -14,7 +14,7 @@ export default function ScheduleForm({ addTask }) {
   }
 
   return (
-    <form onSubmit={submit} className="bg-white dark:bg-gray-900 p-6 rounded-2xl mb-8 border border-gray-100 dark:border-gray-800 shadow-sm transition-all duration-300">
+    <form onSubmit={submit} className="bg-white dark:bg-[#111827] p-6 rounded-2xl mb-8 border border-gray-100 dark:border-gray-800 shadow-sm transition-all duration-300">
       <h3 className="font-bold mb-4 text-gray-800 dark:text-gray-200">What do you want to study today?</h3>
       <div className="flex flex-col sm:flex-row gap-3 items-center">
         <input 

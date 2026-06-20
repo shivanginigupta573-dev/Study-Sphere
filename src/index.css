@@ -14,6 +14,6 @@ body {
 
 @layer utilities {
   .glass {
-    @apply bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-sm;
+    @apply bg-white dark:bg-[#111827] border border-gray-100 dark:border-gray-800 shadow-sm;
   }
 }
