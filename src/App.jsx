@@ -111,7 +111,7 @@ function App() {
             <Route path="/goals" element={<Goals />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </main>
       </div>
       <Footer/>
