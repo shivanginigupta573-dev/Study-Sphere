@@ -1,14 +1,13 @@
 import React from "react";
 import { weeklyHours, subjectDistribution, heatmapValues } from "../utils/calcStats";
-import useLocalStorage from "../utils/useLocalStorage";
+import { useTasks } from "../contexts/TasksContext";
 import HeatmapView from "../Components/HeatmapView";
 import LineChart from "../Components/LineChart"
 import DonutChart from "../Components/DonutChart";
 import ProgressBar from "../Components/ProgressBar";
 
 export default function Dashboard() {
-  const [dummy, setDummy] = useLocalStorage("ignore", 0); // force re-render if needed
-  const logs = JSON.parse(localStorage.getItem("task_logs") || "[]");
+  const { logs } = useTasks();
 
   const weekly = weeklyHours(logs);
   const dist = subjectDistribution(logs);

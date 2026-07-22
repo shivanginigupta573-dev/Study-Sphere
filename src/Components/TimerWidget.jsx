@@ -10,6 +10,7 @@ export default function TimerWidget({
   onComplete,
   defaultMinutes = 25,
   defaultSubject = "General",
+  presets = [25, 50, 90]
 }) {
   const [minutes, setMinutes] = useState(defaultMinutes);
   const [seconds, setSeconds] = useState(defaultMinutes * 60);
@@ -70,7 +71,7 @@ export default function TimerWidget({
 
       {/* Session Presets */}
       <div className="flex gap-3 mb-12 flex-wrap justify-center">
-        {[25, 50, 90].map((preset) => (
+        {presets.map((preset) => (
           <button
             key={preset}
             onClick={() => {

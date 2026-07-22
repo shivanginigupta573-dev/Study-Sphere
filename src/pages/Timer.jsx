@@ -1,19 +1,13 @@
 import React from "react";
 import TimerWidget from "../Components/TimerWidget";
 import { toast } from "sonner";
+import { useTasks } from "../contexts/TasksContext";
 
 export default function Timer() {
+  const { logSession } = useTasks();
+
   function onComplete(minutes, subject) {
-    const logs = JSON.parse(localStorage.getItem("task_logs") || "[]");
-
-    logs.push({
-      subject,
-      minutes,
-      date: new Date().toISOString().slice(0, 10),
-    });
-
-    localStorage.setItem("task_logs", JSON.stringify(logs));
-
+    logSession(subject, minutes);
     toast.success(`Session logged: ${minutes} mins for ${subject}`);
   }
 

@@ -3,34 +3,17 @@ import { Link } from "react-router-dom";
 import ScheduleForm from "../Components/ScheduleForm";
 import TaskList from "../Components/TaskList";
 import HeatmapView from "../Components/HeatmapView";
-import useLocalStorage from "../utils/useLocalStorage";
 import useProfile from "../utils/useProfile";
+import { useTasks } from "../contexts/TasksContext";
 import { heatmapValues, thisWeekStats } from "../utils/calcStats";
 import { toast } from "sonner";
 
 export default function Home() {
   const { profile } = useProfile();
-  const [tasks, setTasks] = useLocalStorage("planner_tasks", []);
+  const { tasks, addTask, removeTask, markDone, logs } = useTasks();
   
-  const logs = JSON.parse(localStorage.getItem("task_logs") || "[]");
   const heat = heatmapValues(logs);
   const stats = thisWeekStats(logs);
-
-  function addTask(task) {
-    setTasks([...tasks, task]);
-  }
-  function removeTask(idx) {
-    const copy = tasks.slice();
-    copy.splice(idx, 1);
-    setTasks(copy);
-  }
-  function markDone(idx) {
-    const t = tasks[idx];
-    const newLogs = [...logs, { subject: t.subject, minutes: t.minutes, date: t.date }];
-    localStorage.setItem("task_logs", JSON.stringify(newLogs));
-    removeTask(idx);
-    toast.success("Session logged for analytics!");
-  }
 
   // format total minutes to hours and mins
     const formatTime = (mins) => {

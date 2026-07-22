@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "sonner";
 
 export default function ScheduleForm({ addTask }) {
   const [subject, setSubject] = useState("");
@@ -7,7 +8,10 @@ export default function ScheduleForm({ addTask }) {
 
   function submit(e) {
     e.preventDefault();
-    if (!subject) return alert("add subject");
+    if (!subject) {
+      toast.error("Please add a subject first");
+      return;
+    }
     addTask({ subject, minutes: Number(minutes), date });
     setSubject("");
     setMinutes(25);
