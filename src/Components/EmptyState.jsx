@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 /**
  * Reusable empty-state card shown when a page has no content yet.
@@ -22,3 +23,9 @@ export default function EmptyState({ icon, title, description }) {
     </div>
   );
 }
+
+EmptyState.propTypes = {
+  icon: PropTypes.node,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+};

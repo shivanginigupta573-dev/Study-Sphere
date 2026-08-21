@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
 import { Play, Pause, RotateCcw, ChevronDown } from "lucide-react";
 
 /**
@@ -125,3 +126,10 @@ export default function TimerWidget({
     </div>
   );
 }
+
+TimerWidget.propTypes = {
+  onComplete: PropTypes.func.isRequired,
+  defaultMinutes: PropTypes.number,
+  defaultSubject: PropTypes.string,
+  presets: PropTypes.arrayOf(PropTypes.number),
+};

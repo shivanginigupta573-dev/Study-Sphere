@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const dotColors = [
   "bg-primary-500",
@@ -87,3 +88,15 @@ export default function TaskList({ tasks, removeTask, markDone }) {
     </div>
   );
 }
+
+TaskList.propTypes = {
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      subject: PropTypes.string,
+      minutes: PropTypes.number,
+      date: PropTypes.string,
+    })
+  ),
+  removeTask: PropTypes.func.isRequired,
+  markDone: PropTypes.func.isRequired,
+};

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { toast } from "sonner";
 
 export default function ScheduleForm({ addTask }) {
@@ -51,3 +52,7 @@ export default function ScheduleForm({ addTask }) {
     </form>
   );
 }
+
+ScheduleForm.propTypes = {
+  addTask: PropTypes.func.isRequired,
+};
